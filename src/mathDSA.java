@@ -39,4 +39,9 @@ public class mathDSA {
         return ans;
     }
 
+    static int sumOfRowsInPascalTri(int n){
+        int ans = (int) Math.pow(2 , (n-1));
+        return ans;
+    }
+
 }
