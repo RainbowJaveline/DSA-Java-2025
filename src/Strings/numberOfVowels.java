@@ -20,8 +20,17 @@ public class numberOfVowels {
         String s = Integer.toString(num);
         System.out.println(s.length());
 
+        String str3 = "     day";
+        System.out.println("This is what i wanted :" + " "+ str3.trim().length());
+
         //Print all Substring
         allSubstring("gopi");
+
+        //Sum of All substring
+        System.out.println(sumOfAllSubString("6759"));
+
+        //maximum occurrence in a string
+        maxOccurrenceInAString();
     }
     static boolean isPalindrome(String str){
         String str1 = str.toLowerCase();
@@ -54,4 +63,52 @@ public class numberOfVowels {
 //            System.out.println();
         }
     }
+
+    //Sum of All Substring of a Number
+    static int sumOfAllSubString(String s){
+        int sum = 0;
+        for (int i = 0; i < s.length(); i++) {
+            for (int j = i+1; j <=s.length(); j++) {
+                sum+= Integer.parseInt(s.substring(i,j));// Integer.parseInt() is used to convert string to INT
+            }
+//            System.out.println();
+        }
+        return sum;
+    }
+
+    static void maxOccurrenceInAString(){
+        //return the character that is most repeated inside a string
+        //sample string
+//        String s = "aaaeeeeffxxxxxx";
+//        char[] arr = s.toCharArray();//this string is deliberately kept sorted because this the string should be sorted inorder for this method to work
+//        int maxFreq = -1;
+//        char ele = arr[0];
+//        int i = 0;
+//        int j = 0;
+//        while(j<arr.length){
+//            if(arr[i] == arr[j]){
+//                j = j+1;
+//            }else{
+//                int count = j-i;
+//                if(count > maxFreq){
+//                    maxFreq = count;
+//                    ele = arr[i];
+//                }
+//                i = j;
+//            }
+//
+//
+//        }
+//        int count = j-i;
+//        if(count > maxFreq){
+//            maxFreq = count;
+//            ele = arr[i];
+//        }
+//        System.out.println("Maximum :"+" "+ele);
+
+        //Method2 - Using frequency array
+
+
+    }
+
 }
