@@ -22,6 +22,10 @@ public class printUptoN {
         System.out.println(aRaisedTob(2, 24));
         //Calling reverse function
         System.out.println(reverse(1234 , 0));
+        //Calling hcf recursion function
+        System.out.println(hcf(318 , 504));
+        //Calling fibonacci recursion function
+        System.out.println(fibo(10));
     }
 
     //Method 1 - This prints numbers from 1 to N using Recursion
@@ -93,4 +97,38 @@ public class printUptoN {
         if(n==0) return r;
         return reverse(n/10 , r*10 + n%10 );
     }
+
+    //HCF of a number
+    static int hcf(int a , int b){
+        //Time Complexity - O(log(max(a,b)))
+        //The below method works but is time consuming so we will use recursion
+//        int ans = 1;
+//        if(a==b) return a;
+//        int min = Math.min(a,b);
+//        for (int i = 1; i <= min ; i++) {
+//            if(a%i == 0 && b%i== 0){
+//                ans = i;
+//            }
+//        }
+//        return ans;
+        if(a==0) return b;
+        return hcf(b%a,a);
+    }
+
+    //Nth fibonacci number
+    //Time Complexity - O(2^n)
+    static int fibo(int n){
+        if(n<=1) return n;
+        return fibo(n-1) + fibo(n-2);
+    }
+
+    //70 Climbing stairs leetcode
+    //This solution provides answer but time limit exceeded error is shown for large values
+    //That's y we need to use DP(Dynamic Programming)
+    static int climbStairs(int n) {
+            if(n==1) return 1;
+            if(n==2) return 2;
+            return climbStairs(n-1)+climbStairs(n-2);
+        }
+
 }
