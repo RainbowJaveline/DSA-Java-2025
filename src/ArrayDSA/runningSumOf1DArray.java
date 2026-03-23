@@ -1,6 +1,5 @@
-package Arrays;
+package ArrayDSA;
 
-import java.sql.Array;
 import java.util.Arrays;
 
 public class runningSumOf1DArray {

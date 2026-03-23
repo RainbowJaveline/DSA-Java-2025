@@ -1,4 +1,4 @@
-package Arrays;
+package ArrayDSA;
 
 public class removeDuplicates {
     static void main(String[] args) {

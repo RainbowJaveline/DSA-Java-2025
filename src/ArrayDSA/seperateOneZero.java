@@ -1,6 +1,4 @@
-package Arrays;
-
-import java.util.Arrays;
+package ArrayDSA;
 
 public class seperateOneZero {
     static void main(String[] args) {

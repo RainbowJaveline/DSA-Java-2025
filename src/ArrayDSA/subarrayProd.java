@@ -1,4 +1,4 @@
-package Arrays;
+package ArrayDSA;
 
 public class subarrayProd {
     static void main(String[] args) {
