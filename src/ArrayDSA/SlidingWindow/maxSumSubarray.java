@@ -4,22 +4,28 @@ package ArrayDSA.SlidingWindow;
 public class maxSumSubarray {
     public static void main(String[] args) {
         int[] arr = {100, 200, 300, 400};
-        int k = 1;
+        int k = 2;
         System.out.println(maxSumwithK(arr,k));
     }
 
     static int maxSumwithK(int[] arr , int k){
                 int n = arr.length;
+                int low = 0;
+                int high = k - 1;
                 int sum = 0;
                 // Step 1: First window
-                for(int i = 0; i < k; i++){
+                for(int i = low; i <= high; i++){
                     sum += arr[i];
                 }
                 int ans = sum;
                 // Step 2: Slide window
-                for(int i = k; i < n; i++){
-                    sum = sum - arr[i - k] + arr[i];
-                    ans = Math.max(ans, sum);
+                while(high < n){
+                    low++;
+                    high++;
+                    if(high == n) break;
+                    sum = sum - arr[low-1] + arr[high];
+                    ans = Math.max(sum , ans);
+
                 }
                 return ans;
     }
